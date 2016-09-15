@@ -42,7 +42,7 @@ layout: default
     </ul>
   </div>
   <div class="col">
-    <h4><a href="#css">JavaScript</a></h4>
+    <h4><a href="#js">JavaScript</a></h4>
     <ul>
       <li><a href="#js-syntax">JavaScript syntax</a></li>
       <li><a href="js-naming-conventions">Naming Conventions</a></li>
@@ -435,5 +435,143 @@ layout: default
       <li>Add new line at end of files.</li>
     </ul>
     <p>Consider documenting and applying these preferences to your project's <code>.editorconfig</code> file. For an example, see <a href="https://github.com/twbs/bootstrap/blob/master/.editorconfig">the one in Bootstrap</a>. Learn more <a href="http://editorconfig.org">about EditorConfig</a>.</p>
+  </div>
+</div>
+
+
+
+<div class="heading" id="js">
+  <h2>JavaScript</h2>
+</div>
+
+<div class="section" id="js-syntax">
+  <div class="col">
+    <h3>Syntax</h3>
+    <ul>
+      <li>Use 2 spaces for indenting your code and swear an oath to never mix tabs and spaces - a special kind of hell is awaiting you otherwise.</li>
+      <li>Use UNIX-style newlines (<code>\n</code>), and a newline character as the last character of a file. Windows-style newlines (<code>\r\n</code>) are forbidden inside any repository.</li>
+      <li>Just like you brush your teeth after every meal, you clean up any trailing whitespace in your JS files before committing. Otherwise the rotten smell of careless neglect will eventually drive away contributors and/or co-workers.</li>
+      <li>According to <a href="http://news.ycombinator.com/item?id=1547647">scientific research</a>, the usage of semicolons is a core value of our community. Consider the points of <a href="http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding">the opposition</a>, but be a traditionalist when it comes to abusing error correction mechanisms for cheap syntactic pleasures.</li>
+      <li>Use single quotes, unless you are writing JSON.</li>
+      <li>Your opening braces go on the same line as the statement.</li>
+      <li>Declare one variable per var statement, it makes it easier to re-order the lines. However, ignore <a href="http://javascript.crockford.com/code.html">Crockford</a> when it comes to declaring variables deeper inside a function, just put the declarations wherever they make sense.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/syntax.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="js-naming-conventions">
+  <div class="col">
+    <h3>Naming Conventions</h3>
+    <ul>
+      <li>Variables, properties and function names should use lowerCamelCase. They should also be descriptive. Single character variables and uncommon abbreviations should generally be avoided.</li>
+      <li>Class names should be capitalized using UpperCamelCase.</li>
+      <li>Constants should be declared as regular variables or static class properties, using all uppercase letters.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/declaration-order.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="js-variables">
+  <div class="col">
+    <h3>Variables</h3>
+    <p>Use trailing commas and put short declarations on a single line. Only quote keys when your interpreter complains.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include css/import.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="js-conditionals">
+  <div class="col">
+    <h3>Conditionals</h3>
+    <h4>Use the === operator</h4>
+    <p>Programming is not about remembering <a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators">stupid rules</a>. Use the triple equality operator as it will work just as expected.</p>
+    <h4>Use descriptive conditions</h4>
+    <p>Any non-trivial conditions should be assigned to a descriptively named variable or function.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/media-queries.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="js-functions">
+  <div class="col">
+    <h3>Functions</h3>
+    <p>When using vendor prefixed properties, indent each property such that the declaration's value lines up vertically for easy multi-line editing.</p>
+    <p>In Textmate, use <strong>Text &rarr; Edit Each Line in Selection</strong> (&#8963;&#8984;A). In Sublime Text 2, use <strong>Selection &rarr; Add Previous Line</strong> (&#8963;&#8679;&uarr;) and <strong>Selection &rarr;  Add Next Line</strong> (&#8963;&#8679;&darr;).</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/prefixed-properties.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="js-comments">
+  <div class="col">
+    <h3>Comments</h3>
+    <p>In instances where a rule set includes <strong>only one declaration</strong>, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines.</p>
+    <p>The key factor here is error detection—e.g., a CSS validator stating you have a syntax error on Line 183. With a single declaration, there's no missing it. With multiple declarations, separate lines is a must for your sanity.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/single-declarations.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="js-misc">
+  <div class="col">
+    <h3>Miscellaneous</h3>
+    <p>Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values. Common overused shorthand properties include:</p>
+    <ul>
+      <li><code>padding</code></li>
+      <li><code>margin</code></li>
+      <li><code>font</code></li>
+      <li><code>background</code></li>
+      <li><code>border</code></li>
+      <li><code>border-radius</code></li>
+    </ul>
+    <p>Often times we don't need to set all the values a shorthand property represents. For example, HTML headings only set top and bottom margin, so when necessary, only override those two values. Excessive use of shorthand properties often leads to sloppier code with unnecessary overrides and unintended side effects.</p>
+    <p>The Mozilla Developer Network has a great article on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">shorthand properties</a> for those unfamiliar with notation and behavior.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/shorthand.css %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="js-jquery-syntax">
+  <div class="col">
+    <h3>jQuery syntax</h3>
+    <p>Avoid unnecessary nesting. Just because you can nest, doesn't mean you always should. Consider nesting only if you must scope styles to a parent and if there are multiple elements to be nested.</p>
+    <p>Additional reading:</p>
+    <ul>
+      <li><a href="http://markdotto.com/2015/07/20/css-nesting/">Nesting in Sass and Less</a></li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight scss %}{% include css/nesting.scss %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="js-selectors">
+  <div class="col">
+    <h3>Avoid using class or id selectors!</h3>
+    <p>For improved readability, wrap all math operations in parentheses with a single space between values, variables, and operators.</p>
+  </div>
+  <div class="col">
+    {% highlight scss %}{% include css/operators.scss %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="js-cache-selectors">
+  <div class="col">
+    <h3>Cache your selectors</h3>
+    <p>Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name.</p>
+    <p>Be sure to write in complete sentences for larger comments and succinct phrases for general notes.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/comments.css %}{% endhighlight %}
   </div>
 </div>
