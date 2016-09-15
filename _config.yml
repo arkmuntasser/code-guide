@@ -1,5 +1,5 @@
-name:          Code Guide by @arkmuntasser based on Code Guide by @mdo
-description:   Standards for developing flexible, durable, and sustainable HTML and CSS.
+name:          SV Code Guide by @arkmuntasser
+description:   Standards for developing flexible, durable, and sustainable HTML, CSS, and JavaScript.
 url:           https://arkmuntasser.github.io/code-guide
 
 markdown:      rdiscount
