@@ -466,8 +466,8 @@ layout: default
   <div class="col">
     <h3>Naming Conventions</h3>
     <ul>
-      <li>Variables, properties and function names should use lowerCamelCase. They should also be descriptive. Single character variables and uncommon abbreviations should generally be avoided.</li>
-      <li>Class names should be capitalized using UpperCamelCase.</li>
+      <li>Variables, properties and function names should use <code>lowerCamelCase</code>. They should also be descriptive. Single character variables and uncommon abbreviations should generally be avoided.</li>
+      <li>Class names should be capitalized using <code>UpperCamelCase</code>.</li>
       <li>Constants should be declared as regular variables or static class properties, using all uppercase letters.</li>
     </ul>
   </div>
@@ -502,8 +502,17 @@ layout: default
 <div class="section" id="js-functions">
   <div class="col">
     <h3>Functions</h3>
-    <p>When using vendor prefixed properties, indent each property such that the declaration's value lines up vertically for easy multi-line editing.</p>
-    <p>In Textmate, use <strong>Text &rarr; Edit Each Line in Selection</strong> (&#8963;&#8984;A). In Sublime Text 2, use <strong>Selection &rarr; Add Previous Line</strong> (&#8963;&#8679;&uarr;) and <strong>Selection &rarr;  Add Next Line</strong> (&#8963;&#8679;&darr;).</p>
+    <h4>Write small functions</h4>
+    <p>Keep your functions short. A good function fits on a slide that the people in the last row of a big room can comfortably read. So don't count on them having perfect vision and limit yourself to ~15 lines of code per function.</p>
+    <h4>Return early from functions</h4>
+    <p>To avoid deep nesting of if-statements, always return a function's value as early as possible.</p>
+    <h4>Name your closures</h4>
+    <p>Feel free to give your closures a name. It shows that you care about them, and will produce better stack traces, heap and cpu profiles.</p>
+    <h4>No nested closures</h4>
+    <p>Use closures, but don't nest them. Otherwise your code will become a mess.</p>
+    <h4>Method chaining</h4>
+    <p>One method per line should be used if you want to chain methods.<p>
+    <p>You should also indent these methods so it's easier to tell they are part of the same chain.</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/prefixed-properties.css %}{% endhighlight %}
@@ -513,8 +522,7 @@ layout: default
 <div class="section" id="js-comments">
   <div class="col">
     <h3>Comments</h3>
-    <p>In instances where a rule set includes <strong>only one declaration</strong>, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines.</p>
-    <p>The key factor here is error detection—e.g., a CSS validator stating you have a syntax error on Line 183. With a single declaration, there's no missing it. With multiple declarations, separate lines is a must for your sanity.</p>
+    <p>Use slashes for both single line and multi line comments. Try to write comments that explain higher level mechanisms or clarify difficult segments of your code. Don't use comments to restate trivial things.</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/single-declarations.css %}{% endhighlight %}
@@ -524,17 +532,15 @@ layout: default
 <div class="section" id="js-misc">
   <div class="col">
     <h3>Miscellaneous</h3>
-    <p>Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values. Common overused shorthand properties include:</p>
-    <ul>
-      <li><code>padding</code></li>
-      <li><code>margin</code></li>
-      <li><code>font</code></li>
-      <li><code>background</code></li>
-      <li><code>border</code></li>
-      <li><code>border-radius</code></li>
-    </ul>
-    <p>Often times we don't need to set all the values a shorthand property represents. For example, HTML headings only set top and bottom margin, so when necessary, only override those two values. Excessive use of shorthand properties often leads to sloppier code with unnecessary overrides and unintended side effects.</p>
-    <p>The Mozilla Developer Network has a great article on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">shorthand properties</a> for those unfamiliar with notation and behavior.</p>
+    <h4>Object.freeze, Object.preventExtensions, Object.seal, with, eval</h4>
+    <p>Crazy shit that you will probably never need. Stay away from it.</p>
+    <h4>Requires At Top</h4>
+    <p>Always put requires at top of file to clearly illustrate a file's dependencies. Besides giving an overview for others at a quick glance of dependencies and possible memory impact, it allows one to determine if they need a package.json file should they choose to use the file elsewhere.</p>
+    <h4>Getters and setters</h4>
+    <p>Do not use setters, they cause more problems for people who try to use your software than they can solve.</p>
+    <p>Feel free to use getters that are free from <a href="http://en.wikipedia.org/wiki/Side_effect_(computer_science)">side effects</a>, like providing a length property for a collection class.</p>
+    <h4>Do not extend built-in prototypes</h4>
+    <p>Do not extend the prototype of native JavaScript objects. Your future self will be forever grateful.</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/shorthand.css %}{% endhighlight %}
@@ -544,11 +550,6 @@ layout: default
 <div class="section" id="js-jquery-syntax">
   <div class="col">
     <h3>jQuery syntax</h3>
-    <p>Avoid unnecessary nesting. Just because you can nest, doesn't mean you always should. Consider nesting only if you must scope styles to a parent and if there are multiple elements to be nested.</p>
-    <p>Additional reading:</p>
-    <ul>
-      <li><a href="http://markdotto.com/2015/07/20/css-nesting/">Nesting in Sass and Less</a></li>
-    </ul>
   </div>
   <div class="col">
     {% highlight scss %}{% include css/nesting.scss %}{% endhighlight %}
@@ -558,7 +559,6 @@ layout: default
 <div class="section" id="js-selectors">
   <div class="col">
     <h3>Avoid using class or id selectors!</h3>
-    <p>For improved readability, wrap all math operations in parentheses with a single space between values, variables, and operators.</p>
   </div>
   <div class="col">
     {% highlight scss %}{% include css/operators.scss %}{% endhighlight %}
@@ -568,8 +568,6 @@ layout: default
 <div class="section" id="js-cache-selectors">
   <div class="col">
     <h3>Cache your selectors</h3>
-    <p>Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name.</p>
-    <p>Be sure to write in complete sentences for larger comments and succinct phrases for general notes.</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/comments.css %}{% endhighlight %}
