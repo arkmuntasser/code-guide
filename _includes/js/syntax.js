@@ -22,7 +22,7 @@ console.log('Hello, world!');
 var html = "<p class='subtitle'>The JS is bad and now it's made the HTML bad.</p>";
 
 // Good example
-var html = '<p class="subtitle">There now everything looks pretty!</p>';
+var html = '<p class="subtitle">There, now everything looks pretty!</p>';
 
 
 // Opening braces go on the same lines
