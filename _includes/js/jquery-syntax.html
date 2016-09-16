@@ -1,0 +1,43 @@
+<!-- Bad eample -->
+<div class="widget">
+  <div class="widget-inner hide">
+    <div class="title">
+      Hello, world!
+    </div>
+    <div class="description">
+      <p>
+        This is a basic example.
+      </p>
+    </div>
+  </div>
+  <button class="widget-button">Show</button>
+</div>
+
+<script>
+  $('.widget-button').on('click', function toggle() {
+    $('.widget-inner').toggleClass('hide');
+  });
+</script>
+
+
+<!-- Good eample -->
+<div class="widget" data-widget>
+  <div class="widget-inner hide">
+    <div class="title">
+      Hello, world!
+    </div>
+    <div class="description">
+      <p>
+        This is a basic example.
+      </p>
+    </div>
+  </div>
+  <button class="widget-button" data-widget-toggle>Show</button>
+</div>
+
+<script>
+  var root = $('[data-widget]');
+  root.find('[data-widget-toggle]').on('click', function toggle() {
+    root.find('.widget-inner').toggleClass('hide');
+  });
+</script>
