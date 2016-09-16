@@ -477,6 +477,7 @@ layout: default
     <h3>Conditionals</h3>
     <h4>Use the === operator</h4>
     <p>Programming is not about remembering <a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators">stupid rules</a>. Use the triple equality operator as it will work just as expected.</p>
+    <br>
     <h4>Use descriptive conditions</h4>
     <p>Any non-trivial conditions should be assigned to a descriptively named variable or function.</p>
   </div>
@@ -490,12 +491,16 @@ layout: default
     <h3>Functions</h3>
     <h4>Write small functions</h4>
     <p>Keep your functions short. A good function fits on a slide that the people in the last row of a big room can comfortably read. So don't count on them having perfect vision and limit yourself to ~15 lines of code per function.</p>
+    <br>
     <h4>Return early from functions</h4>
     <p>To avoid deep nesting of if-statements, always return a function's value as early as possible.</p>
+    <br>
     <h4>Name your closures</h4>
     <p>Feel free to give your closures a name. It shows that you care about them, and will produce better stack traces, heap and cpu profiles.</p>
+    <br>
     <h4>No nested closures</h4>
     <p>Use closures, but don't nest them. Otherwise your code will become a mess.</p>
+    <br>
     <h4>Method chaining</h4>
     <p>One method per line should be used if you want to chain methods.<p>
     <p>You should also indent these methods so it's easier to tell they are part of the same chain.</p>
@@ -520,11 +525,14 @@ layout: default
     <h3>Miscellaneous</h3>
     <h4>Object.freeze, Object.preventExtensions, Object.seal, with, eval</h4>
     <p>Crazy shit that you will probably never need. Stay away from it.</p>
+    <br>
     <h4>Requires At Top</h4>
     <p>Always put requires at top of file to clearly illustrate a file's dependencies. Besides giving an overview for others at a quick glance of dependencies and possible memory impact, it allows one to determine if they need a package.json file should they choose to use the file elsewhere.</p>
+    <br>
     <h4>Getters and setters</h4>
     <p>Do not use setters, they cause more problems for people who try to use your software than they can solve.</p>
     <p>Feel free to use getters that are free from <a href="http://en.wikipedia.org/wiki/Side_effect_(computer_science)">side effects</a>, like providing a length property for a collection class.</p>
+    <br>
     <h4>Do not extend built-in prototypes</h4>
     <p>Do not extend the prototype of native JavaScript objects. Your future self will be forever grateful.</p>
   </div>
