@@ -28,7 +28,11 @@
 
 <script>
   var root = $('[data-widget]');
-  root.find('[data-widget-toggle]').on('click', function toggle() {
-    root.find('.widget-inner').toggleClass('hide');
-  });
+  root
+    .find('[data-widget-toggle]')
+    .on('click', function toggle() {
+      root
+        .find('.widget-inner')
+        .toggleClass('hide');
+    });
 </script>
