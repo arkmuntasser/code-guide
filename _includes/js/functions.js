@@ -32,18 +32,6 @@ function isPercentage(val) {
 }
 
 
-// Name your closures
-// Bad example
-req.on('end', function() {
-  console.log('losing');
-});
-
-// Good example
-req.on('end', function onEnd() {
-  console.log('winning');
-});
-
-
 // No nested closures
 // Bad example
 setTimeout(function() {

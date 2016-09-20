@@ -10,5 +10,5 @@ var b = {"good": 'code'
 var a = ['hello', 'world'];
 var b = {
   good: 'code',
-  'is generally': 'pretty',
+  'is generally': 'pretty'
 };

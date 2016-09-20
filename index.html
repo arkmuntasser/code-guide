@@ -495,8 +495,6 @@ layout: default
     <h4>Return early from functions</h4>
     <p>To avoid deep nesting of if-statements, always return a function's value as early as possible.</p>
     <br>
-    <h4>Name your closures</h4>
-    <p>Feel free to give your closures a name. It shows that you care about them, and will produce better stack traces, heap and cpu profiles.</p>
     <br>
     <h4>No nested closures</h4>
     <p>Use closures, but don't nest them. Otherwise your code will become a mess.</p>
@@ -544,6 +542,7 @@ layout: default
 <div class="section" id="js-jquery-syntax">
   <div class="col">
     <h3>jQuery syntax <a href="#js-jquery-syntax"><i class="fa fa-link"></i></a></h3>
+    <p>Always define a root node for every widget. This allows us to limit the size of the node tree when use functions like <code>.find()</code> which will improve performance. This will also help restrict any interactions, functions and listeners you define to the widget itself. Otherwise, other widgets may trigger your code to run.</p>
   </div>
   <div class="col">
     {% highlight html %}{% include js/jquery-syntax.html %}{% endhighlight %}
@@ -553,6 +552,7 @@ layout: default
 <div class="section" id="js-selectors">
   <div class="col">
     <h3>Avoid using class or id selectors <a href="#js-selectors"><i class="fa fa-link"></i></a></h3>
+    <p>This helps keep a strict separation between structure and functionality. With this, an element can be completely restyled with an entire new set of classes and ids without any loss of functionality.</p>
   </div>
   <div class="col">
     {% highlight html %}{% include js/selectors.html %}{% endhighlight %}
@@ -562,6 +562,7 @@ layout: default
 <div class="section" id="js-cache-selectors">
   <div class="col">
     <h3>Cache your selectors <a href="#js-cache-selectors"><i class="fa fa-link"></i></a></h3>
+    <p>If you’re going to use a selector more than once, you should store it in a variable. Not only does it make the code easier to read, but it also improves performance since jQuery no longer has to traverse the DOM to find matching nodes.</p>
   </div>
   <div class="col">
     {% highlight js %}{% include js/cache-selectors.js %}{% endhighlight %}
