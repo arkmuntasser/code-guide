@@ -10,7 +10,7 @@
 </div>
 
 <script>
-  $('.widget-button').on('click', function toggle() {
+  $('.widget-button').on('click', function() {
     $('.widget-inner').toggleClass('hide');
   });
 </script>
@@ -30,7 +30,7 @@
   var root = $('[data-widget]');
   root
     .find('[data-widget-toggle]')
-    .on('click', function toggle() {
+    .on('click', function() {
       root
         .find('.widget-inner')
         .toggleClass('hide');
