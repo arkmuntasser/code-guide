@@ -3,7 +3,7 @@ var root = $('[data-widget]');
 
 root
   .find('.slider')
-  .on('init', function initSlider() {});
+  .on('init', function() {});
 root
   .find('.slider')
   .slick({});
@@ -12,5 +12,5 @@ root
 var root = $('[data-widget]');
 var slider = root.find('.slider');
 
-slider.on('init', function initSlider() {});
+slider.on('init', function() {});
 slider.slick({});
