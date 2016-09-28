@@ -3,14 +3,14 @@ var root = $('[data-widget]');
 
 root
   .find('.slider')
-  .on('init', function() { ... });
+  .on('init', function() { /*...*/ });
 root
   .find('.slider')
-  .slick({ ... });
+  .slick({ /*...*/ });
 
 // Good example
 var root = $('[data-widget]');
 var slider = root.find('.slider');
 
-slider.on('init', function() { ... });
-slider.slick({ ... });
+slider.on('init', function() { /*...*/ });
+slider.slick({ /*...*/ });
