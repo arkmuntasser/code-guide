@@ -1,38 +1,38 @@
 <!-- Bad example -->
 <div class="widget">
-  <div class="widget-inner hide">
-    <div class="title">Hello, world!</div>
-    <div class="description">
-      <p>This is a basic example.</p>
+    <div class="widget-inner hide">
+        <div class="title">Hello, world!</div>
+        <div class="description">
+            <p>This is a basic example.</p>
+        </div>
     </div>
-  </div>
-  <button class="widget-button">Show</button>
+    <button class="widget-button">Show</button>
 </div>
 
 <script>
-  $('.widget-button').on('click', function() {
-    $('.widget-inner').toggleClass('hide');
-  });
+    $('.widget-button').on('click', function() {
+        $('.widget-inner').toggleClass('hide');
+    });
 </script>
 
 <!-- Good example -->
 <div class="widget" data-widget>
-  <div class="widget-inner hide">
-    <div class="title">Hello, world!</div>
-    <div class="description">
-      <p>This is a basic example.</p>
+    <div class="widget-inner hide">
+        <div class="title">Hello, world!</div>
+        <div class="description">
+            <p>This is a basic example.</p>
+        </div>
     </div>
-  </div>
-  <button class="widget-button" data-widget-toggle>Show</button>
+    <button class="widget-button" data-widget-toggle>Show</button>
 </div>
 
 <script>
-  var root = $('[data-widget]');
-  root
-    .find('[data-widget-toggle]')
-    .on('click', function() {
-      root
-        .find('.widget-inner')
-        .toggleClass('hide');
-    });
+    var root = $('[data-widget]');
+    root
+        .find('[data-widget-toggle]')
+        .on('click', function() {
+            root
+                .find('.widget-inner')
+                .toggleClass('hide');
+        });
 </script>

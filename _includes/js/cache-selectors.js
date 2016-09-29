@@ -2,11 +2,11 @@
 var root = $('[data-widget]');
 
 root
-  .find('.slider')
-  .on('init', function() { /*...*/ });
+    .find('.slider')
+    .on('init', function() { /*...*/ });
 root
-  .find('.slider')
-  .slick({ /*...*/ });
+    .find('.slider')
+    .slick({ /*...*/ });
 
 // Good example
 var root = $('[data-widget]');

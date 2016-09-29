@@ -1,6 +1,6 @@
 // Bad example
 var a = [
-  'hello', 'world'
+    'hello', 'world'
 ];
 var b = {"good": 'code'
         , is generally: 'pretty'
@@ -9,6 +9,6 @@ var b = {"good": 'code'
 // Good example
 var a = ['hello', 'world'];
 var b = {
-  good: 'code',
-  'is generally': 'pretty'
+    good: 'code',
+    'is generally': 'pretty'
 };

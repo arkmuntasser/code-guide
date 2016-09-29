@@ -1,23 +1,23 @@
 <!-- Bad example -->
 <div class="item" id="item1" data-item>
-  <p class="description">Hello, world!</p>
+    <p class="description">Hello, world!</p>
 </div>
 
 <script>
-  var root = $('.item#item1');
-  root
-    .find('.description')
-    .addClass('subheader');
+    var root = $('.item#item1');
+    root
+        .find('.description')
+        .addClass('subheader');
 </script>
 
 <!-- Good example -->
 <div class="item" id="item1" data-item>
-  <p class="description">Hello, world!</p>
+    <p class="description">Hello, world!</p>
 </div>
 
 <script>
-  var root = $('[data-item]');
-  root
-    .find('.description')
-    .addClass('subheader');
+    var root = $('[data-item]');
+    root
+        .find('.description')
+        .addClass('subheader');
 </script>

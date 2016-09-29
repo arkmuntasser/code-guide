@@ -1,12 +1,12 @@
 // Use 2 spaces for indents
 // Bad example
 if (bar === foo) {
-    // This is 4 space soft tabs
+    /* ... */
 }
 
 // Good example
 if (bar === foo) {
-  // This is 4 space soft tabs
+    /* ... */
 }
 
 
@@ -29,15 +29,15 @@ var html = '<p class="subtitle">There, now everything looks pretty!</p>';
 // Bad example
 if (bar === foo)
 {
-  // This is madness
-  var bat = bar + foo;
+    // This is madness
+    var bat = bar + foo;
 }
 
 // Good example
 if (bar === foo) {
-  var bat = bar + foo;
+    var bat = bar + foo;
 } else {
-  var bin = bar * foo;
+    var bin = bar * foo;
 }
 
 
@@ -49,8 +49,8 @@ var keys = ['foo', 'bar'],
     key;
 
 while (keys.length) {
-  key = keys.pop();
-  object[key] = values.pop();
+    key = keys.pop();
+    object[key] = values.pop();
 }
 
 // Good example
@@ -59,6 +59,6 @@ var values = [23, 42];
 
 var object = {};
 while (keys.length) {
-  var key = keys.pop();
-  object[key] = values.pop();
+    var key = keys.pop();
+    object[key] = values.pop();
 }

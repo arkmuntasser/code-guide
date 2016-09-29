@@ -5,10 +5,10 @@
 
 /* Multiple declarations, one per line */
 .sprite {
-  display: inline-block;
-  width: 16px;
-  height: 15px;
-  background-image: url(../img/sprite.png);
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    background-image: url(../img/sprite.png);
 }
 .icon           { background-position: 0 0; }
 .icon-home      { background-position: 0 -20px; }
