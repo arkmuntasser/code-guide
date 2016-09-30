@@ -111,7 +111,7 @@ blockquote:last-child { margin-bottom: 0; }
 
 code,
 pre {
-  font-family: "PT Mono", Menlo, "Courier New", monospace;
+  font-family: "Source Code Pro", Menlo, "Courier New", monospace;
   font-size: 95%;
 }
 code {
