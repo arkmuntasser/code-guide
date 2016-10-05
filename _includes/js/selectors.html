@@ -11,12 +11,12 @@
 </script>
 
 <!-- Good example -->
-<div class="item" id="item1" data-item>
+<div class="item" id="item1" data-item="{{guid}}">
     <p class="description">Hello, world!</p>
 </div>
 
 <script>
-    var root = $('[data-item]');
+    var root = $('[data-item="{{guid}}"]');
     root
         .find('.description')
         .addClass('subheader');

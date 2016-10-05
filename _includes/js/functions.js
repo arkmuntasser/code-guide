@@ -32,21 +32,29 @@ function isPercentage(val) {
 }
 
 
-// No nested closures
+// Limit nested closures
 // Bad example
 setTimeout(function() {
     client.connect(function() {
-        console.log('losing');
+        widget.on('init', function() {
+            $(this).find('[data-widget-items]').each(function() {
+                console.log('losing');
+            });
+        });
     });
 }, 1000);
 
-// Good example
+// Better example
 setTimeout(function() {
-    client.connect(afterConnect);
+    client.connect(initWidget);
 }, 1000);
 
-function afterConnect() {
-    console.log('winning');
+function initWidget() {
+    widget.on('init', function() {
+        $(this).find('[data-widget-items]').each(function() {
+            console.log('winning');
+        });
+    });
 }
 
 // Method chaining

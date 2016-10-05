@@ -1,4 +1,4 @@
-// Use 2 spaces for indents
+// Use 4 space hard tabs for indents
 // Bad example
 if (bar === foo) {
     /* ... */
@@ -16,14 +16,6 @@ console.log('I done goofed')
 
 // Good example
 console.log('Hello, world!');
-
-// Use single quotes
-// Bad example
-var html = "<p class='subtitle'>The JS is bad and now it's made the HTML bad.</p>";
-
-// Good example
-var html = '<p class="subtitle">There, now everything looks pretty!</p>';
-
 
 // Opening braces go on the same lines
 // Bad example

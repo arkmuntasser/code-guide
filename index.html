@@ -396,12 +396,12 @@ layout: default
   <div class="col">
     <h3>Syntax <a href="#js-syntax"><i class="fa fa-link"></i></a></h3>
     <ul>
-      <li>Use 2 spaces for indenting your code and swear an oath to never mix tabs and spaces - a special kind of hell is awaiting you otherwise.</li>
-      <li>Use UNIX-style newlines (<code>\n</code>), and a newline character as the last character of a file. Windows-style newlines (<code>\r\n</code>) are forbidden inside any repository.</li>
-      <li>Just like you brush your teeth after every meal, you clean up any trailing whitespace in your JS files before committing. Otherwise the rotten smell of careless neglect will eventually drive away contributors and/or co-workers.</li>
-      <li>According to <a href="http://news.ycombinator.com/item?id=1547647" target="_blank">scientific research</a>, the usage of semicolons is a core value of our community. Consider the points of <a href="http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding" target="_blank">the opposition</a>, but be a traditionalist when it comes to abusing error correction mechanisms for cheap syntactic pleasures.</li>
-      <li>Use single quotes, unless you are writing JSON.</li>
+      <li>Use hard tabs with four spaces.</li>
+      <li>Remove all trailing white space.</li>
+      <li>Always end you statements with a semicolon.</li>
       <li>Your opening braces go on the same line as the statement.</li>
+      <li>Else opening should be on the same line as the if closing brace.</li>
+      <li>If statements can be single line if they have a single return.</li>
       <li>Declare one variable per var statement, it makes it easier to re-order the lines. However, ignore <a href="http://javascript.crockford.com/code.html" target="_blank">Crockford</a> when it comes to declaring variables deeper inside a function, just put the declarations wherever they make sense.</li>
     </ul>
   </div>
@@ -427,7 +427,7 @@ layout: default
 <div class="section" id="js-variables">
   <div class="col">
     <h3>Variables <a href="#js-variables"><i class="fa fa-link"></i></a></h3>
-    <p>Use trailing commas and put short declarations on a single line. Only quote keys when your interpreter complains.</p>
+    <p>Put short declarations on a single line. Only quote keys when your interpreter complains.</p>
   </div>
   <div class="col">
     {% highlight js %}{% include js/variables.js %}{% endhighlight %}
@@ -438,7 +438,7 @@ layout: default
   <div class="col">
     <h3>Conditionals <a href="#js-conditionals"><i class="fa fa-link"></i></a></h3>
     <h4>Use the === operator</h4>
-    <p>Programming is not about remembering <a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators" target="_blank">stupid rules</a>. Use the triple equality operator as it will work just as expected.</p>
+    <p>Use the triple equality operator as it will work just as expected.</p>
     <br>
     <h4>Use descriptive conditions</h4>
     <p>Any non-trivial conditions should be assigned to a descriptively named variable or function.</p>
@@ -458,8 +458,8 @@ layout: default
     <p>To avoid deep nesting of if-statements, always return a function's value as early as possible.</p>
     <br>
     <br>
-    <h4>No nested closures</h4>
-    <p>Use closures, but don't nest them. Otherwise your code will become a mess.</p>
+    <h4>Limit nested closures</h4>
+    <p>There will always be times when you'll need to nest your closures, but limit the depth to ~3 deep otherwise your code can become unreadable and hard to maintain.</p>
     <br>
     <h4>Method chaining</h4>
     <p>One method per line should be used if you want to chain methods.<p>
@@ -489,10 +489,6 @@ layout: default
     <h4>Requires At Top</h4>
     <p>Always put requires at top of file to clearly illustrate a file's dependencies. Besides giving an overview for others at a quick glance of dependencies and possible memory impact, it allows one to determine if they need a package.json file should they choose to use the file elsewhere.</p>
     <br>
-    <h4>Getters and setters</h4>
-    <p>Do not use setters, they cause more problems for people who try to use your software than they can solve.</p>
-    <p>Feel free to use getters that are free from <a href="http://en.wikipedia.org/wiki/Side_effect_(computer_science)" target="_blank">side effects</a>, like providing a length property for a collection class.</p>
-    <br>
     <h4>Do not extend built-in prototypes</h4>
     <p>Do not extend the prototype of native JavaScript objects. Your future self will be forever grateful.</p>
   </div>
@@ -504,7 +500,7 @@ layout: default
 <div class="section" id="js-jquery-syntax">
   <div class="col">
     <h3>jQuery syntax <a href="#js-jquery-syntax"><i class="fa fa-link"></i></a></h3>
-    <p>Always define a root node for every widget. This allows us to limit the size of the node tree when use functions like <code>.find()</code> which will improve performance. This will also help restrict any interactions, functions and listeners you define to the widget itself. Otherwise, other widgets may trigger your code to run.</p>
+    <p>Always define a root node for every widget based off of the <code>{{guid}}</code>. This allows us to limit the size of the node tree when use functions like <code>.find()</code> which will improve performance. This will also help restrict any interactions, functions and listeners you define to the specific instance of the widget. Otherwise, other widgets or multiples of the same widget may trigger your code to run.</p>
   </div>
   <div class="col">
     {% highlight html %}{% include js/jquery-syntax.html %}{% endhighlight %}

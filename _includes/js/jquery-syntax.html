@@ -16,7 +16,7 @@
 </script>
 
 <!-- Good example -->
-<div class="widget" data-widget>
+<div class="widget" data-widget="{{guid}}">
     <div class="widget-inner hide">
         <div class="title">Hello, world!</div>
         <div class="description">
@@ -27,7 +27,7 @@
 </div>
 
 <script>
-    var root = $('[data-widget]');
+    var root = $('[data-widget="{{guid}}"]');
     root
         .find('[data-widget-toggle]')
         .on('click', function() {

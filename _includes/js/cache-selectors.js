@@ -1,5 +1,5 @@
 // Bad example
-var root = $('[data-widget]');
+var root = $('[data-widget="{{guid}}"]');
 
 root
     .find('.slider')
@@ -9,7 +9,7 @@ root
     .slick({ /*...*/ });
 
 // Good example
-var root = $('[data-widget]');
+var root = $('[data-widget="{{guid}}"]');
 var slider = root.find('.slider');
 
 slider.on('init', function() { /*...*/ });
