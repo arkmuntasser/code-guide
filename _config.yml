@@ -1,6 +1,6 @@
 name:          SV Code Guide
 description:   Standards for developing flexible, durable, and sustainable HTML, CSS and JavaScript.
-url:           https://arkmuntasser.github.io/code-guide
+url:           https://simpleviewinc.github.io/code-guide
 
 markdown:      rdiscount
 permalink:     pretty
